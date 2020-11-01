@@ -20,21 +20,15 @@ class PostsController < ApplicationController
   end
 
   def index
-    @swim_races = SwimRace.where.not(latitude: nil, longitude: nil)
-    @swim_races = @swim_races.where('dates >= ?', Date.today).order(:dates)
-    @search = params["search"]
-    if @search.present?
-      @city_name = @search["city_name"]
-      if @city_name != ""
-        coordinates = Geocoder.search(@city_name).first.coordinates
-        @swim_races = @swim_races.near(coordinates, 200).order(:dates)
-      end
-    end
-    @markers = @swim_races.map do |swim_race|
+    @posts = Posts.where.not(latitude: nil, longitude: nil)
+    @posts = @posts.where('event_date <= ?', Date.today).order(:event_date)
+
+
+    @markers = @posts.map do |post|
       {
-        lat: swim_race.latitude,
-        lng: swim_race.longitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { swim_race: swim_race }),
+        lat: post.latitude,
+        lng: post.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { post: post }),
       }
     end
     @months = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
@@ -45,7 +39,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     skip_authorization
-    @markers = [{ lat: @swim_race.latitude, lng: @swim_race.longitude }]
+    @markers = [{ lat: @post.latitude, lng: @post.longitude }]
 
   end
 
