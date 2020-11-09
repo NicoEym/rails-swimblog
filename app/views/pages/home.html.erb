@@ -1,7 +1,27 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dzxrdf9za/image/upload/v1593218718/ghazcvekq7jl13ihwfxl.png);">
   <div class="container">
     <h1>Nico swim blog</h1>
     <p>Swimming around the world.</p>
-    <%= link_to("Find out", posts_path, class:"btn btn-flat")  %>
+    <%= link_to("Find out", "#", class:"btn btn-flat")  %>
   </div>
 </div>
+
+<br>
+  <div class="container">
+     <div class="row justify-center">
+        <h2>All the races:</h2>
+      </div>
+    <div class="col-xs-12 col-md-12">
+      <div id="map"
+         style="width: 100%; height: 600px;"
+         data-markers="<%= @markers.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+
+
+
+    <%= render 'shared/cardpost', post: @posts %>
+  </div>
+<br>
+
