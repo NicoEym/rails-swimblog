@@ -4,7 +4,4 @@ class Post < ApplicationRecord
   has_one_attached :photo
   belongs_to :user
 
-  has_one :content
-  has_one :title
-  has_one :event_date
 end

@@ -7,11 +7,11 @@
 
 
     <%= simple_form_for [@post]  do |f| %>
-      <%= f.input :title, label: 'Nom de la plage:'%>
-      <%= f.input :event_date, label: "Commune:" %>
-      <%= f.input :content, label: "Latitude:" %>
-      <%= f.input :city, label: "Longitude:" %>
-      <%= f.input :photo_url, label: "Photo:" %>
+      <%= f.input :title, label: 'Title:'%>
+      <%= f.input :event_date, label: "Event date:" %>
+      <%= f.input :content, label: "Story:" %>
+      <%= f.input :city, label: "City:" %>
+      <%= f.input :photo, label: "Photo:" %>
 
       <%= f.submit "Valider le post", class: "btn btn-lg btn-primary blue-nav col-xs-9 col-md-12" %>
     <% end %>
