@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
     authorize @post
     if @post.save
       redirect_to posts_path(@post)
