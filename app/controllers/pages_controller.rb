@@ -10,7 +10,7 @@ class PagesController < ApplicationController
         lat: post.latitude,
         lng: post.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { post: post }),
-        image_url: helpers.asset_url(post.photo_url)
+        #image_url: helpers.asset_url(post.photo)
       }
     end
     @months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
