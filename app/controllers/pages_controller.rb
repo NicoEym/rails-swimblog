@@ -9,7 +9,7 @@ class PagesController < ApplicationController
       {
         lat: post.latitude,
         lng: post.longitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { post: post }),
+        infoWindow: render_to_string(partial: "info_window", locals: { post: post }),
         image_url: helpers.asset_url(post.photo_url)
       }
     end
