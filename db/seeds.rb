@@ -15,6 +15,6 @@ user.save!
 puts "Creating admin"
 
 
-SwimType.create(name: "Fun")
+SwimType.create(name: "Swim for Fun")
 SwimType.create(name: "Workout")
-SwimType.create(name: "Race")
+SwimType.create(name: "Swim Race")
