@@ -9,6 +9,7 @@
     <%= simple_form_for [@post]  do |f| %>
       <%= f.input :title, label: 'Title:'%>
       <%= f.input :event_date, label: "Event date:" %>
+      <%= f.input :swim_type_id, collection: @swim_types, label_method: :name, prompt: "Choose type:", required: true, html: {class: "form-control"}, label: false %>
       <%= f.input :content, label: "Story:" %>
       <%= f.input :city, label: "City:" %>
       <%= f.input :photo, label: "Photo:" %>
