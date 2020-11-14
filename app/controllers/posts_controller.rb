@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-
+    @swim_types = SwimType.all
     authorize @post
     @post.user = current_user
   end
@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     @post.user = current_user
     authorize @post
     if @post.save
-      redirect_to posts_path(@post)
+      redirect_to home_path
     else
       render :new
     end
@@ -57,7 +57,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :event_date, :city, :photo)
+    params.require(:post).permit(:title, :content, :event_date, :city, :photo, :swim_type_id)
   end
 
   def set_post

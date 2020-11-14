@@ -1,3 +1,7 @@
+
+Post.delete_all
+User.delete_all
+
 user = User.new(
 
 
