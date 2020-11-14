@@ -1,0 +1,2 @@
+class SwimType < ApplicationRecord
+end

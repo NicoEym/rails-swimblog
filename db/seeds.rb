@@ -9,3 +9,8 @@ user = User.new(
 
 user.save!
 puts "Creating admin"
+
+
+SwimType.create(name: "Fun")
+SwimType.create(name: "Workout")
+SwimType.create(name: "Race")
