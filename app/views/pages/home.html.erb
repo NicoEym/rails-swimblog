@@ -20,8 +20,10 @@
     </div>
 
 
+    <% @posts.each do |post| %>
+      <%= render 'shared/cardpost', post: post %>
+    <% end %>
 
-    <%= render 'shared/cardpost', post: @posts %>
   </div>
 <br>
 
