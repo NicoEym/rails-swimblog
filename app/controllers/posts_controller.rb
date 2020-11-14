@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     @post.user = current_user
     authorize @post
     if @post.save
-      redirect_to home_path
+      redirect_to root_path
     else
       render :new
     end
