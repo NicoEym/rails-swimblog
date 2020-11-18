@@ -1,5 +1,5 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dzxrdf9za/image/upload/v1593218718/ghazcvekq7jl13ihwfxl.png);">
-  <div>
+  <div class='container-home'>
     <h1>Nico swim blog</h1>
     <p>Swimming around the world.</p>
     <%= link_to("Find out", "#", class:"btn btn-flat")  %>
@@ -18,25 +18,26 @@
          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
-
-    <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <% @posts.each do |post| %>
-      <div class="carousel-item active" data-interval="1000">
-        <%= render 'shared/cardpost', post: post %>
-      </div>
-    <% end %>
-
   </div>
-    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
+<br>
+    <div class="container">
+      <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <% @posts.each do |post| %>
+            <div class="carousel-item active" data-interval="1000">
+              <%= render 'shared/cardpost', post: post %>
+            </div>
+          <% end %>
+        </div>
+      <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
 
   </div>
 <br>
