@@ -7,6 +7,8 @@ const initScroll = () => {
     button.addEventListener('click', (e) => {
         if (map_container.classList.contains("hidden-style")) {
           map_container.classList.remove("hidden-style");
+          card_container.classList.remove("hidden-style");
+          footer.classList.remove("hidden-style");
         }
       map_container.scrollIntoView({behavior: "smooth", block: "start"});;
 
