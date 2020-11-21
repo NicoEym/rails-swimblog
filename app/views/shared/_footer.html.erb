@@ -1,4 +1,11 @@
-<div class="footer hidden-style" id="footer">
+
+<% if current_page?(root_path) %>
+      <div class="footer hidden-style" id="footer">
+  <% else %>
+      <div class="footer" id="footer">
+<% end %>
+
+
   <div class="footer-links">
     <a href="https://github.com/NicoEym"><i class="fab fa-github"></i></a>
     <a href="#"><i class="fab fa-instagram"></i></a>
