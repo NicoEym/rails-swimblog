@@ -3,8 +3,10 @@ class PagesController < ApplicationController
 
   def home
     @posts = Post.where.not(latitude: nil, longitude: nil)
-    @posts = @posts.where('event_date <= ?', Date.today).order(:event_date)
 
+    @posts = @posts.where('event_date <= ?', Date.today).order(:event_date)
+    @first_post = @posts.first
+    @other_posts = @posts.where.not(id: @first_post.id)
     @markers = @posts.map do |post|
       {
         lat: post.latitude,
