@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   skip_after_action :verify_policy_scoped, :only => :index
-  before_action :set_post, only: [:edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def new
     @post = Post.new
@@ -40,6 +40,9 @@ class PostsController < ApplicationController
   #   skip_authorization
   #   @markers = [{ lat: @post.latitude, lng: @post.longitude }]
   # end
+
+  def show
+  end
 
   def edit
   end
