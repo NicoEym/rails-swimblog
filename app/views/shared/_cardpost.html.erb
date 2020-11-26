@@ -1,6 +1,10 @@
+<div class="card" style="width: 18rem;">
 
-<!--   <h1> <%= post.title %> </h1>
-  <h2> <%= post.event_date %> </h2>
-  <p><%= post.city %></p> -->
-  <%= image_tag(post.photo, :class => "d-block w-100") %>
+  <% image_tag(post.photo, size: "16x10", class:"card-img-top" ) %>
+  <div class="card-body">
+    <h5 class="card-title"><%= post.title %></h5>
+    <p class="card-text"><%= post.content %></p>
 
+    <%= link_to("Read", post_path(post)) %>
+  </div>
+</div>
