@@ -1,4 +1,6 @@
 <div class="container">
-  <div><%= @post.title %></div>
+    <%= image_tag(@post.photo) %>
+    <div><%= @post.title %> - <%= @post.event_date %></div>
     <p><%= @post.content %></p>
 </div>
+
