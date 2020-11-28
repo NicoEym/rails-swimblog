@@ -27,17 +27,21 @@
   <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
 
-      <div class="carousel-item active space_around" data-interval="10000">
+      <div class="carousel-item active" data-interval="10000">
+        <div class="space_around" >
         <% @first_3_posts.each do |post| %>
           <%= render 'shared/cardpost', post: post %>
         <% end %>
+        </div>
       </div>
 
       <% @other_posts.each do |array_of_post| %>
-        <div class="carousel-item space_around" data-interval="10000">
-          <% array_of_post.each do |post| %>
-            <%= render 'shared/cardpost', post: post %>
-          <% end %>
+        <div class="carousel-item" data-interval="10000">
+          <div class="space_around" >
+            <% array_of_post.each do |post| %>
+              <%= render 'shared/cardpost', post: post %>
+            <% end %>
+          </div>
         </div>
       <% end %>
     </div>
