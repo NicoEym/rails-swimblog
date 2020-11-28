@@ -10,7 +10,7 @@
 </div>
 
 
-<div class="container hidden-style margin1" id='map-page'>
+<div class="container hidden-style" id='map-page'>
   <div class="row justify-center">
     <h2>All the races:</h2>
   </div>
@@ -23,18 +23,18 @@
   </div>
 </div>
 
-<div class="container hidden-style margin1" id="card-container">
+<div class="container hidden-style" id="card-container">
   <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
 
-      <div class="carousel-item active space_around" data-interval="1000">
+      <div class="carousel-item active space_around" data-interval="10000">
         <% @first_3_posts.each do |post| %>
           <%= render 'shared/cardpost', post: post %>
-         <% end %>
+        <% end %>
       </div>
 
       <% @other_posts.each do |array_of_post| %>
-        <div class="carousel-item space_around" data-interval="1000">
+        <div class="carousel-item space_around" data-interval="10000">
           <% array_of_post.each do |post| %>
             <%= render 'shared/cardpost', post: post %>
           <% end %>

@@ -1,6 +1,6 @@
 <div class="card" style="width: 18rem;">
 
-  <% image_tag(post.photo, size: "16x10", class:"card-img-top" ) %>
+  <%= image_tag(post.photo, class:"card-img-top" ) %>
   <div class="card-body">
     <h5 class="card-title"><%= post.title %></h5>
     <p class="card-text"><%= post.content %></p>
