@@ -1,6 +1,7 @@
 <div class="card" style="width: 18rem;">
-
-  <%= image_tag(post.photo, class:"card-img-top" ) %>
+  <div class="card-image card-img-top">
+    <%= image_tag(post.photo, class:"" ) %>
+  </div>
   <div class="card-body">
     <h5 class="card-title"><%= post.title %> - <%= post.event_date %></h5>
     <p class="card-text"><%= post.content %></p>
