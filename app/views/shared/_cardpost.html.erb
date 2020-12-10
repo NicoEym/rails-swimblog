@@ -1,12 +1,14 @@
-<div class="card" style="width: 18rem;">
-  <div class="card-image card-img-top">
-    <%= image_tag(post.photo, class:"" ) %>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title"><%= post.title %> </h5>
-    <h6 class="card-title"> <%= post.event_date %></h6>
-    <p class="card-text"><%= post.content %></p>
 
-    <%= link_to("Read more", post_path(post)) %>
+  <div class="card" style="width: 18rem;">
+    <%= link_to("", post_path(post), class:"card-link")  %>
+    <div class="card-image card-img-top">
+      <%= image_tag(post.photo, class:"" ) %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= post.title %> </h5>
+      <h6 class="card-title"> <%= post.event_date %></h6>
+      <p class="card-text"><%= post.content %></p>
+
+    </div>
   </div>
-</div>
+
