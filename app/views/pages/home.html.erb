@@ -4,7 +4,6 @@
     <p>Swimming around the world.</p>
     <div class='button-box'>
       <h2 class="btn btn-outline" id='button_scroll'>Find out</h2>
-
     </div>
   </div>
 </div>
@@ -15,11 +14,13 @@
     <div class="row justify-center">
       <h2>All the races:</h2>
     </div>
-    <div class="col-xs-12 col-md-12 flex justify-center">
-      <div id="map"
-         style="width: 80%; height: 400px;"
-         data-markers="<%= @markers.to_json %>"
-         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="row">
+      <div class="col-xs-12 col-md-12 flex justify-center">
+        <div id="map"
+           style="width: 80%; height: 400px;"
+           data-markers="<%= @markers.to_json %>"
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
       </div>
     </div>
   </div>
