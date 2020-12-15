@@ -21,25 +21,25 @@ class PostsController < ApplicationController
     end
   end
 
-  # def index
-  #   @posts = Posts.where.not(latitude: nil, longitude: nil)
-  #   @posts = @posts.where('event_date <= ?', Date.today).order(:event_date)
+  def index
+    @posts = Posts.where.not(latitude: nil, longitude: nil)
+    @posts = @posts.where('event_date <= ?', Date.today).order(:event_date)
 
-  #   @markers = @posts.map do |post|
-  #     {
-  #       lat: post.latitude,
-  #       lng: post.longitude,
-  #       infoWindow: render_to_string(partial: "infowindow", locals: { post: post }),
-  #     }
-  #   end
-  #   @months = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
-  # end
+    @markers = @posts.map do |post|
+      {
+        lat: post.latitude,
+        lng: post.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { post: post }),
+      }
+    end
+    @months = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+  end
 
-  # def show
-  #   @post = Post.find(params[:id])
-  #   skip_authorization
-  #   @markers = [{ lat: @post.latitude, lng: @post.longitude }]
-  # end
+  def show
+    @post = Post.find(params[:id])
+    skip_authorization
+    @markers = [{ lat: @post.latitude, lng: @post.longitude }]
+  end
 
   def show
   end
