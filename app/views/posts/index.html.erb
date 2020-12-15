@@ -1,5 +1,7 @@
 <div class="container">
+  <div class="row">
     <% @posts.each do |post| %>
       <%= render 'shared/cardpostindex', post: post %>
     <% end %>
+  </div>
 </div>
