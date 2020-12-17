@@ -1,11 +1,26 @@
 <div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-12 flex justify-center">
+      <%= image_tag(@post.photo, class: "width100") %>
+    </div>
+  </div>
+
+  <h2 class="text-center"><%= @post.title %> - <%= @post.event_date %></h2>
+  <p><%= @post.content %></p>
+
+  <div id='map-page'>
+    <div class="row justify-center">
+      <h2>All the races:</h2>
+    </div>
     <div class="row">
       <div class="col-xs-12 col-md-12 flex justify-center">
-        <%= image_tag(@post.photo, class: "width100") %>
+        <div id="map"
+         style="width: 80%; height: 400px;"
+         data-markers="<%= @markers.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
       </div>
     </div>
-
-    <h2 class="text-center"><%= @post.title %> - <%= @post.event_date %></h2>
-    <p><%= @post.content %></p>
+  </div>
 </div>
 
