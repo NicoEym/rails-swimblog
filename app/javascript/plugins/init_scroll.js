@@ -12,7 +12,7 @@ const initScroll = () => {
 
         }
       container.scrollIntoView({behavior: "smooth", block: "start"});;
-      // banner.classList.add("hidden-style");
+      //  banner.classList.add("hidden-style");
 
     });
 
