@@ -41,9 +41,6 @@ class PostsController < ApplicationController
     @markers = [{ lat: @post.latitude, lng: @post.longitude }]
   end
 
-  def show
-  end
-
   def edit
   end
 
