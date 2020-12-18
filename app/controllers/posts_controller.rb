@@ -22,16 +22,11 @@ class PostsController < ApplicationController
   end
 
   def index
+    # we get all the post that have coordinates
     @posts = Post.where.not(latitude: nil, longitude: nil)
-    @posts = @posts.where('event_date <= ?', Date.today).order(:event_date)
 
-    # @markers = @posts.map do |post|
-    #   {
-    #     lat: post.latitude,
-    #     lng: post.longitude,
-    #     infoWindow: render_to_string(partial: "infowindow", locals: { post: post }),
-    #   }
-    # end
+    # then all events that took place before today's date and rank then from the newest tot the latest
+    @posts = @posts.where('event_date <= ?', Date.today).order(:event_date)
     @months = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
   end
 
@@ -64,5 +59,4 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     authorize @post
   end
-
 end
