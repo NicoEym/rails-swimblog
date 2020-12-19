@@ -9,6 +9,7 @@
 @import "button";
 @import "card";
 @import "carousel";
+@import "color";
 
 .container {
   min-height:100vh;
@@ -63,9 +64,7 @@ a { color: inherit;
   width: 100%;
 }
 
-.orange {
-  background-color: #DC602E;
-}
+
 
 .text-center {
   text-align: center;

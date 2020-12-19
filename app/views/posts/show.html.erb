@@ -1,7 +1,7 @@
 <br>
 <div class="container">
   <h2 class="text-center"><%= @post.title %> - <%= @post.event_date %></h2>
-  <div>
+  <div class="red margin1 padding1 shadow-boxing border-radius05">
     <div class="row">
       <div class="col-xs-12 col-md-6 flex justify-center">
         <%= image_tag(@post.photo, class: "width100") %>
@@ -17,6 +17,8 @@
     </div>
   </div>
 
-  <p><%= @post.content %></p>
+  <div class="white margin1 padding1 shadow-boxing border-radius05">
+    <p><%= @post.content %></p>
+  </div>
 </div>
 
