@@ -39,7 +39,7 @@
         </div>
 
         <% @other_posts.each do |array_of_post| %>
-          <div class="carousel-item" data-interval="10000">
+          <div class="carousel-item" data-interval="5000">
             <div class="space_around" >
               <% array_of_post.each do |post| %>
                 <%= render 'shared/cardpost', post: post %>
