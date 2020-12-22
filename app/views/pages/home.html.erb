@@ -25,12 +25,12 @@
     </div>
   </div>
 <br>
+  <% unless @posts.empty? %>
   <div id="card-container" class="padding1 margin1 shadow-boxing border-radius05">
-
     <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
 
-        <div class="carousel-item active" data-interval="10000">
+        <div class="carousel-item active" data-interval="5000">
           <div class="space_around" >
           <% @first_3_posts.each do |post| %>
             <%= render 'shared/cardpost', post: post %>
@@ -59,4 +59,5 @@
       </a>
     </div>
   </div>
+  <% end %>
 </div>

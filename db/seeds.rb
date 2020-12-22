@@ -1,5 +1,6 @@
 
 Post.delete_all
+SwimType.delete_all
 User.delete_all
 
 user = User.new(
