@@ -6,6 +6,7 @@ const initScroll = () => {
 
   if (button) {
     button.addEventListener('click', (e) => {
+      console.log("toto")
         if (container.classList.contains("hidden-style")) {
           container.classList.remove("hidden-style");
           footer.classList.remove("hidden-style");
