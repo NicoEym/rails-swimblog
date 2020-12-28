@@ -20,5 +20,14 @@
   <div class="white margin1 padding1 shadow-boxing border-radius05">
     <p><%= @post.content %></p>
   </div>
+  <% if !current_user.nil? %>
+      <% if policy(@post).edit? %>
+          <%= link_to raw('Edit Post'), edit_post_path(@post), class: "btn btn-lg btn-primary brown" %>
+      <% end %>
+      <% if policy(@post).destroy? %>
+        <%= link_to "Delete Post", post_path(@post),
+                        method: :delete, class: "btn btn-lg btn-primary orange" %>
+      <% end %>
+    <% end %>
 </div>
 
