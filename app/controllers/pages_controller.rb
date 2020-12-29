@@ -5,9 +5,12 @@ class PagesController < ApplicationController
     @posts = Post.where.not(latitude: nil, longitude: nil)
 
     @posts = @posts.where('event_date <= ?', Date.today).order(:event_date)
-    @first_3_posts = [@posts.first, @posts.second, @posts.third]
-    @other_posts = @posts.where.not(id: @posts.first).to_a.each_slice(3).to_a
+    if @posts.count <= 3
 
+    else
+      @first_3_posts = [@posts.first, @posts.second, @posts.third]
+      @other_posts = @posts.where.not(id: @posts.first).to_a.each_slice(3).to_a
+    end
     @markers = @posts.map do |post|
       {
         lat: post.latitude,

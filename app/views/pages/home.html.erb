@@ -3,13 +3,13 @@
     <h1>Nico Swimblog</h1>
     <p>Swimming around the world.</p>
     <div class='button-box'>
-      <h2 class="btn btn-outline width50 deep-blue btn-hover" id='button_scroll'>Find out</h2>
+      <h2 class="btn btn-outline width50 btn-deep-blue btn-hover" id='button_scroll'>Find out</h2>
     </div>
   </div>
 </div>
 
 
-<div class="container hidden-style" >
+<div class="container hidden-style margin1_top_bottom" >
   <div id='map-page' class="orange padding1 margin1 shadow-boxing border-radius05">
     <div class="row justify-center">
       <h2>All the races:</h2>
@@ -25,24 +25,27 @@
     </div>
   </div>
 <br>
-  <% unless @posts.empty? %>
+  <% unless @posts.count < 3 %>
   <div id="card-container" class="padding1 margin1 shadow-boxing border-radius05">
     <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
-
         <div class="carousel-item active" data-interval="5000">
-          <div class="space_around" >
+          <div class="row" >
           <% @first_3_posts.each do |post| %>
-            <%= render 'shared/cardpost', post: post %>
+            <div class="col-xs-12 col-md-4">
+              <%= render 'shared/cardpost', post: post %>
+            </div>
           <% end %>
           </div>
         </div>
 
         <% @other_posts.each do |array_of_post| %>
           <div class="carousel-item" data-interval="5000">
-            <div class="space_around" >
+            <div class="row">
               <% array_of_post.each do |post| %>
-                <%= render 'shared/cardpost', post: post %>
+                <div class="col-xs-12 col-md-4">
+                  <%= render 'shared/cardpost', post: post %>
+                </div>
               <% end %>
             </div>
           </div>
