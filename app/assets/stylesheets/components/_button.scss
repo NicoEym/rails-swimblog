@@ -25,3 +25,24 @@
 }
 
 
+.btn-orange {
+  background-color: #DC602E;
+  color: white;
+  &:hover {
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    cursor:pointer;
+  }
+}
+
+.btn-brown {
+ background-color: #775B59;
+ color: white;
+  &:hover {
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    cursor:pointer;
+  }
+ }
