@@ -23,11 +23,11 @@
   <% if !current_user.nil? %>
     <div class="margin1">
       <% if policy(@post).edit? %>
-          <%= link_to raw('Edit Post'), edit_post_path(@post), class: "btn btn-lg btn-brown" %>
+          <%= link_to raw('Edit Post'), edit_post_path(@post), class: "btn btn-lg btn-brown btn-hover" %>
       <% end %>
       <% if policy(@post).destroy? %>
         <%= link_to "Delete Post", post_path(@post),
-                        method: :delete, class: "btn btn-lg btn-orange" %>
+                        method: :delete, class: "btn btn-lg btn-orange btn-hover" %>
       <% end %>
     </div>
   <% end %>
