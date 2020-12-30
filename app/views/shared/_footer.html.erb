@@ -9,7 +9,14 @@
     <a href="https://www.instagram.com/ilemenyou/r"><i class="fab fa-instagram"></i></a>
     <a href="https://www.linkedin.com/in/nicolas-eymenier-frm-63012b60/"><i class="fab fa-linkedin"></i></a>
   </div>
-  <div class="footer-copyright">
-    <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+  <div class="footer-navigation padding1 margin1">
+    <% if user_signed_in? && current_user.admin? %>
+      <%= link_to "New Post", new_post_path %>
+      <%= link_to "All the posts", posts_path %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "All the posts", posts_path %>
+      <%= link_to "Login", new_user_session_path %>
+    <% end %>
   </div>
 </div>
