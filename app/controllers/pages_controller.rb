@@ -9,7 +9,7 @@ class PagesController < ApplicationController
 
     else
       @first_3_posts = [@posts.first, @posts.second, @posts.third]
-      @other_posts = @posts.where.not(id: @posts.first).to_a.each_slice(3).to_a
+
     end
     @markers = @posts.map do |post|
       {
