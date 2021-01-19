@@ -19,7 +19,7 @@
   <div class="white margin1 padding1 shadow-boxing border-radius05">
     <p><%= @post.content %></p>
   </div>
-  <% if !current_user.nil? %>
+  <% unless current_user.nil? %>
     <div class="margin1">
       <% if policy(@post).edit? %>
           <%= link_to raw('Edit Post'), edit_post_path(@post), class: "btn btn-lg btn-brown btn-hover" %>
