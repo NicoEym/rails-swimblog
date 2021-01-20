@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 
     # then all events that took place before today's date and rank then from the newest tot the latest
     @posts = @posts.where('event_date <= ?', Date.today).order(:event_date)
-    @months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
   end
 
   def show
