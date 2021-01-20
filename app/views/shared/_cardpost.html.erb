@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=url_for(post.photo) %>);">
   <div class="container-home">
     <div id="landing-page-form" class="col-xs-9 col-md-6">
-      <h1><%= post.title %> <%= post.event_date %></h1>
+      <h1><%= post.title %> <%= post.clean_date %></h1>
       <p><%= post.content %></p>
           <%= link_to("Read this story", post_path(post), class:"btn-outline btn-deep-blue btn-hover")  %>
     </div>

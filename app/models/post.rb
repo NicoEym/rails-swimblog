@@ -4,4 +4,8 @@ class Post < ApplicationRecord
   has_one_attached :photo
   belongs_to :user
   belongs_to :swim_type
+
+  def clean_date
+    "#{event_date.strftime('%B')}, #{event_date.day.ordinalize} #{event_date.year}"
+  end
 end

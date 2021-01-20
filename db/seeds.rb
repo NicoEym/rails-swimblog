@@ -19,3 +19,5 @@ puts "Creating admin"
 SwimType.create(name: "Swim for Fun")
 SwimType.create(name: "Workout")
 SwimType.create(name: "Swim Race")
+
+
